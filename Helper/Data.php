@@ -1,26 +1,23 @@
 <?php
 
-namespace MD\HelloWorld\Helper;
+namespace MD\Helloworld\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\ScopeInterface;
 
-class Data extends AbstractHelper
+
+class Data extends AbstractHelper 
 {
+	const XML_PATH = 'helloworld/';
 
-	const XML_PATH_HELLOWORLD = 'helloworld/';
-
-	public function getConfigValue($field, $storeId = null)
+	public function getConfigValue($field, $storeCode = null)
 	{
-		return $this->scopeConfig->getValue(
-			$field, ScopeInterface::SCOPE_STORE, $storeId
-		);
+		return $this->scopeConfig->getValue($field, ScopeInterface::SCOPE_STORE, $storeCode);
 	}
 
-	public function getGeneralConfig($code, $storeId = null)
+	public function getGeneralConfig($fieldid, $storeCode = null)
 	{
-
-		return $this->getConfigValue(self::XML_PATH_HELLOWORLD .'general/'. $code, $storeId);
+		return $this->getConfigValue(self::XML_PATH.'general/'.$fieldid, $storeCode);
 	}
 
 }
