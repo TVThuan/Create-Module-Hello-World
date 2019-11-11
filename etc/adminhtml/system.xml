@@ -1,24 +1,34 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="mageplaza" translate="label" sortOrder="10">
-            <label>Mageplaza</label>
+        <tab id="helloworld" translate="label" sortOrder="250">
+            <label>Magento 2</label>
         </tab>
         <section id="helloworld" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
-            <class>separator-top</class>
-            <label>Hello World</label>
-            <tab>mageplaza</tab>
-            <resource>Mageplaza_HelloWorld::helloworld_config</resource>
-            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
-                <label>General Configuration</label>
-                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Module Enable</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            <class>hello-separator</class>
+            <label>Settings</label>
+            <tab>helloworld</tab>
+            <resource>MD_Helloworld::news_config</resource>
+            <group id="general" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <comment>This is a title</comment>
                 </field>
-                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Display Text</label>
-                    <comment>This text will display on the frontend.</comment>
+                <field id="content" translate="label" type="textarea" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Content</label>
+                    <comment>This is a content</comment>
                 </field>
+                <field id="image" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="3" showInDefault="1" showInWebsite="1" >
+                    <label>Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system" scope_info="1">helloworlds</upload_dir>
+                </field>
+<!--                 <field id="display" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display in</label>
+                    <source_model>MD\Helloworld\Model\Config\Source\Data</source_model>
+                    <comment>Please select</comment>
+                </field> -->
             </group>
         </section>
     </system>
