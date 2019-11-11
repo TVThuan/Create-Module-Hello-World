@@ -1,7 +1,15 @@
 <?php 
     /**
-     * @var \MD\Helloworld\Block\Index $block
+     * @var \MD\Helloworld\Block\HelloConfig $block
      */
 
-     echo $block->getHelloworld();
 ?>
+<div class="box">
+	<div class="box-image">
+		<img class="image" src="<?=$block->getImage()?>" alt="No Images"/>
+	</div>
+	<div class="box-content">
+		<h2 class="title"><?= $block->getTitle()?></h2>
+		<p class="content"><?=$block->getContent()?></p>
+	</div>
+</div>
