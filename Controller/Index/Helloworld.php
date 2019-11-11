@@ -1,5 +1,8 @@
 <?php
     namespace MD\Helloworld\Controller\Index;
+    
+    use Magento\Framework\App\Action\Action;
+    use Magento\Framework\Controller\ResultFactory;
 
     class Helloworld extends \Magento\Framework\App\Action\Action{
         protected $_pageFactory;
