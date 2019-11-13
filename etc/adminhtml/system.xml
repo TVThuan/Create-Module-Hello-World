@@ -22,13 +22,8 @@
                 <field id="image" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="3" showInDefault="1" showInWebsite="1" >
                     <label>Image</label>
                     <backend_model>Magento\Config\Model\Config\Backend\File</backend_model>
-                    <upload_dir config="system" scope_info="1">helloworlds</upload_dir>
+                    <upload_dir config="system" scope_info="1">helloworld</upload_dir>
                 </field>
-<!--                 <field id="display" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Display in</label>
-                    <source_model>MD\Helloworld\Model\Config\Source\Data</source_model>
-                    <comment>Please select</comment>
-                </field> -->
             </group>
         </section>
     </system>

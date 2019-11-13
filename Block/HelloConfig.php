@@ -31,7 +31,12 @@ Class HelloConfig extends \Magento\Framework\View\Element\Template
 		return $content;
 	}
 	
-
+	public function getUrlMedia()
+	{
+         $mediaUrl = $this ->_storeManager-> getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA );
+         return $mediaUrl."helloworld/";
+	}
+	
 	public function getImage()
 	{
 		$image = $this->dataHelper->getGeneralConfig('image');
@@ -45,9 +50,5 @@ Class HelloConfig extends \Magento\Framework\View\Element\Template
 		return $this->_storeManager->getStore()->getBaseUrl();
 	}
 
-	public function getUrlMedia()
-	{
-         $mediaUrl = $this ->_storeManager-> getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA );
-         return $mediaUrl."helloworld/";
-	}
+	
 }
